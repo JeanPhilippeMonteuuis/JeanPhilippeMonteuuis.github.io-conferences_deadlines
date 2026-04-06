@@ -19,7 +19,7 @@
   deadline:
     - "2026-01-14 23:59"
     - "2026-04-29 23:59"
-  comment: Abstract registration required (1 week before deadline AoE).
+  comment: "Cycle A abstract: Jan 7. Cycle B abstract: Apr 22. Abstract registration required (1 week before deadline AoE)."
   date: November 15-19
   place: The Hague, The Netherlands
   tags: [SEC]
@@ -53,12 +53,12 @@
 - name: NeurIPS
   description: Conference on Neural Information Processing Systems
   year: 2026
-  link: https://neurips.cc/
+  link: https://neurips.cc/Conferences/2026
   deadline:
-    - "2026-05-15 23:59"
-  comment: Abstract deadline typically 1 week before paper deadline.
-  date: "December 6-12"
-  place: Sydney, Australia
+    - "2026-05-06 23:59"
+  comment: "Abstract deadline May 4, 2026. Multi-city: Sydney (Dec 6-12), Atlanta (Dec 8-13), Paris (Dec 9-13)."
+  date: "December 6-13"
+  place: Sydney / Atlanta / Paris
   tags: [AI]
 
 - name: ICLR
