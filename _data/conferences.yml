@@ -26,26 +26,26 @@
 
 - name: USENIX Security
   description: USENIX Security Symposium
-  year: 2026
-  link: https://www.usenix.org/conference/usenixsecurity26
+  year: 2027
+  link: https://www.usenix.org/conference/usenixsecurity27
   deadline:
-    - "2025-08-26 23:59"
-    - "2026-02-05 23:59"
+    - "2026-08-25 23:59"
+    - "2027-01-26 23:59"
   comment: Abstract registration required (1 week before deadline AoE).
-  date: "August 12-14"
-  place: Baltimore, MD, USA
+  date: "August 11-13"
+  place: Denver, CO, USA
   tags: [SEC]
 
 - name: NDSS
   description: ISOC Network and Distributed System Security Symposium
-  year: 2026
-  link: https://www.ndss-symposium.org/ndss2026/submissions/call-for-papers/
+  year: 2027
+  link: https://www.ndss-symposium.org/ndss2027/
   deadline:
-    - "2025-04-23 23:59"
-    - "2025-08-06 23:59"
-  comment: Abstract registration required (1 week before deadline AoE).
-  date: "February 23-27"
-  place: San Diego, CA, USA
+    - "2026-05-06 23:59"
+    - "2026-08-19 23:59"
+  comment: "Summer cycle deadline May 6. Fall cycle deadline Aug 19."
+  date: "March 22-26"
+  place: Seoul, South Korea
   tags: [SEC]
 
 # Machine Learning and AI
