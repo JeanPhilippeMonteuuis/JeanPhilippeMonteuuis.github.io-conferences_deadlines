@@ -8,85 +8,81 @@
 
     <title>{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ "/static/css/deadlines.css" | prepend:site.baseurl }}" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="{{ "/static/css/deadlines.css" | prepend:site.baseurl }}">
     <link rel="shortcut icon" href="{{ "/static/img/favicon.png" | prepend:site.baseurl }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
-    <div class="top-strip"></div>
-    <div class="container">
-      <div class="page-header">
-        <div class="row">
-          <div class="col-xs-12 col-sm-8">
-            <h1>
-              {{ site.title }}<br>
-              <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ site.description }}{% if site.twitter_hashtag %} #{{ site.twitter_hashtag }}{% endif %}" data-show-count="false" style="font-size:13px;">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-              <iframe src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ site.github_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-            </h1>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-top">
+          <div>
+            <h1>{{ site.title }}</h1>
+            <p class="subtitle">{{ site.description }}</p>
           </div>
-          <div class="col-xs-12">
-            {{ site.description }}
-            <p>To add/update a conference, <a target="_blank" href="//github.com/{{ site.github_username }}/{{ site.github_repo }}">send in a pull request</a>.
-            <p>Last update: {{ site.time | date: "%-d %B %Y" }}
+          <div class="header-actions">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ site.description }}{% if site.twitter_hashtag %} #{{ site.twitter_hashtag }}{% endif %}" data-show-count="false">Tweet</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <iframe src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ site.github_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
           </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-12">
-            <!-- <div class="well"> -->
-              Select one or more tags to filter (otherwise all deadlines are displayed):
-              <form class="form-inline">
-                <div class="form-group">
-                  {% for type in site.data.types %}
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" id="{{ type.tag }}-checkbox" class=""> {{ type.name }}
-                    </label>
-                  </div>
-                  {% endfor %}
-                </div>
-              </form>
-            <!-- </div> -->
-          </div>
-        </div>
+        <p class="header-meta">
+          To add or update a conference, <a href="//github.com/{{ site.github_username }}/{{ site.github_repo }}">send a pull request</a>.
+          Last update: {{ site.time | date: "%-d %B %Y" }}.
+        </p>
       </div>
+    </header>
+
+    <div class="container">
+      <div class="filter-bar">
+        <span class="filter-label">Filter:</span>
+        <form class="filter-form">
+          {% for type in site.data.types %}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="{{ type.tag }}-checkbox"> {{ type.name }}
+            </label>
+          </div>
+          {% endfor %}
+        </form>
+      </div>
+
       <div class="conf-container">
         {% for conf in site.data.conferences %}
         {% assign conf_id = conf.name | append: conf.year | slugify %}
         <div id="{{ conf_id }}" class="conf {% for tag in conf.tags %} {{tag}} {% endfor %}">
-          <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <h2><a href="{{conf.link}}">{{conf.name}} {{conf.year}}</a></h2>
-                <div>{% for tag in conf.tags %}<span class="tag-badge {{ tag }}">{{ tag }}</span>{% endfor %}</div>
-                <div class="meta">
-                  {{ conf.description }}<br />
-                  {% if conf.dblp %}
-                  <a href="{{conf.dblp}}">DBLP</a><br />
-                  {% endif %}
-                  {{conf.date | replace: '-', '–'}} {% if conf.place %}// <a href="http://maps.google.com/?q={{conf.place}}">{{conf.place}}</a>{% endif %}<br />
-                </div>
+          <div class="conf-info">
+            <div class="conf-name-row">
+              <h2><a href="{{ conf.link }}">{{ conf.name }} {{ conf.year }}</a></h2>
+              <div class="conf-tags">
+                {% for tag in conf.tags %}<span class="tag-badge {{ tag }}">{{ tag }}</span>{% endfor %}
               </div>
-              <div class="col-xs-12 col-sm-6">
-                <span class="timer"></span>
-                <div class="deadline">
-                  <div>Deadline:
-                    <span class="deadline-time"></span>
-                    <div class="meta">
-                      {{ conf.comment }}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+            <div class="conf-meta">
+              {{ conf.description }}
+            </div>
+            <div class="conf-details">
+              {{ conf.date | replace: '-', '–' }}{% if conf.place %} <span class="sep">·</span> <a href="http://maps.google.com/?q={{ conf.place }}">{{ conf.place }}</a>{% endif %}
+            </div>
           </div>
-          <hr>
+          <div class="conf-countdown">
+            <span class="timer"></span>
+            <div class="deadline">
+              <span class="deadline-label">Deadline</span>
+              <span class="deadline-time"></span>
+              {% if conf.comment %}<div class="conf-comment">{{ conf.comment }}</div>{% endif %}
+            </div>
+          </div>
         </div>
         {% endfor %}
       </div>
-      <footer>
-        Maintained by <a href="https://jeanphilippemonteuuis.github.io/">Jean-Philippe Monteuuis</a>. Created by <a href="//twitter.com/{{ site.twitter_username }}">Bogdan Kulynych</a>. Credits to <a href="https://clementfung.github.io/">Clement Fung</a>.
-      </footer>
     </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        Maintained by <a href="https://jeanphilippemonteuuis.github.io/">Jean-Philippe Monteuuis</a>
+      </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

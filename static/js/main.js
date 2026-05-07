@@ -77,9 +77,11 @@ $(function() {
           var daysLeft = -diff / 86400000;
           var urgency = daysLeft < 7 ? 'urgent' : daysLeft < 21 ? 'warning' : 'safe';
           $(this).removeClass('urgent warning safe').addClass(urgency);
+          $(this).closest('.conf').removeClass('urgent warning safe').addClass(urgency);
         } else {
           $(this).html(confDeadline.fromNow());
           $(this).removeClass('urgent warning safe');
+          $(this).closest('.conf').removeClass('urgent warning safe');
         }
       }
     }
