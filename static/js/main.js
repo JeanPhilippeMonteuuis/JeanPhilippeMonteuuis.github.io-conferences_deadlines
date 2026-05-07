@@ -73,9 +73,13 @@ $(function() {
       return function(event) {
         diff = moment() - confDeadline
         if (diff <= 0) {
-           $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          var daysLeft = -diff / 86400000;
+          var urgency = daysLeft < 7 ? 'urgent' : daysLeft < 21 ? 'warning' : 'safe';
+          $(this).removeClass('urgent warning safe').addClass(urgency);
         } else {
           $(this).html(confDeadline.fromNow());
+          $(this).removeClass('urgent warning safe');
         }
       }
     }

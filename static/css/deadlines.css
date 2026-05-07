@@ -3,6 +3,7 @@ body {
   line-height: 23px;
   overflow-y: scroll;
   color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body *::selection {
@@ -15,13 +16,12 @@ body *::selection {
 }
 
 .top-strip {
-  background-color: #333;
-  height: 0.25em;
+  background: linear-gradient(90deg, #c0392b 0%, #2980b9 50%, #8e44ad 100%);
+  height: 3px;
   width: 100%;
 }
 
 h1,h2,h3 {
-  /* font-weight: 300; */
   margin: 0;
   padding: 0;
 }
@@ -75,19 +75,103 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
-.past {
-  opacity: 0.5;
+/* Conference card */
+.conf {
+  padding: 0.75em 0.5em;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
 }
 
+.conf:hover {
+  background-color: #f8f9fa;
+}
+
+.conf hr {
+  margin: 0.75em 0 0;
+  border-color: #eee;
+}
+
+.past {
+  opacity: 0.45;
+}
+
+/* Timer urgency colors */
 .timer {
   font-size: 1.5em;
   line-height: 1.25em;
 }
 
+.timer.urgent {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.timer.warning {
+  color: #e67e22;
+  font-weight: 600;
+}
+
+.timer.safe {
+  color: #27ae60;
+}
+
+/* Tag badges */
+.tag-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.7em;
+  font-weight: 700;
+  margin-right: 3px;
+  margin-top: 4px;
+  color: white;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+}
+
+.tag-badge.SEC  { background-color: #2980b9; }
+.tag-badge.AI   { background-color: #8e44ad; }
+.tag-badge.PRIV { background-color: #16a085; }
+.tag-badge.CRYPTO { background-color: #d35400; }
+.tag-badge.CONF { background-color: #7f8c8d; }
+.tag-badge.SHOP { background-color: #95a5a6; }
+
+/* Pill-style filter buttons */
 .checkbox {
-  margin-right: 1em;
+  margin-right: 0.5em;
+}
+
+.checkbox label {
+  padding: 4px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  user-select: none;
+  font-weight: normal;
+}
+
+.checkbox label:hover {
+  border-color: #888;
+  background: #f0f0f0;
+}
+
+.checkbox:has(input:checked) label {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
 }
 
 footer {
   margin-bottom: 2em;
+  color: #888;
+  font-size: 0.9em;
+}
+
+footer a {
+  border-color: #ccc;
 }

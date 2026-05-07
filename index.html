@@ -58,6 +58,7 @@
           <div class="row">
               <div class="col-xs-12 col-sm-6">
                 <h2><a href="{{conf.link}}">{{conf.name}} {{conf.year}}</a></h2>
+                <div>{% for tag in conf.tags %}<span class="tag-badge {{ tag }}">{{ tag }}</span>{% endfor %}</div>
                 <div class="meta">
                   {{ conf.description }}<br />
                   {% if conf.dblp %}
