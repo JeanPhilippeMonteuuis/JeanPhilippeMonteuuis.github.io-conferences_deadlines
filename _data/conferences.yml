@@ -1,27 +1,27 @@
 # Security and Privacy
 
 - name: S&P (Oakland)
-  year: 2026
-  date: May 18-21
+  year: 2027
+  date: TBA
   description: IEEE Symposium on Security and Privacy
-  link: https://sp2026.ieee-security.org/
+  link: https://sp2027.ieee-security.org/
   deadline:
-    - "2025-06-05 23:59"
-    - "2025-11-13 23:59"
-  comment: Abstract registration required (1 week before deadline AoE).
-  place: San Francisco, California, USA
+    - "2026-06-05 23:59"
+    - "2026-11-13 23:59"
+  comment: Abstract registration required (1 week before deadline AoE). Dates TBA.
+  place: Montreal, Canada
   tags: [SEC]
 
 - name: CCS
   description: ACM Conference on Computer and Communications Security
-  year: 2026
-  link: https://www.sigsac.org/ccs/CCS2026
+  year: 2027
+  link: https://www.sigsac.org/ccs/CCS2027
   deadline:
-    - "2026-01-14 23:59"
-    - "2026-04-29 23:59"
-  comment: "Cycle A abstract: Jan 7. Cycle B abstract: Apr 22. Abstract registration required (1 week before deadline AoE)."
-  date: November 15-19
-  place: The Hague, The Netherlands
+    - "2027-01-14 23:59"
+    - "2027-04-29 23:59"
+  comment: "Cycle A abstract: Jan 7. Cycle B abstract: Apr 22. Abstract registration required (1 week before deadline AoE). Dates estimated."
+  date: October 2027
+  place: Atlanta, USA
   tags: [SEC]
 
 - name: USENIX Security
@@ -52,66 +52,66 @@
 
 - name: NeurIPS
   description: Conference on Neural Information Processing Systems
-  year: 2026
-  link: https://neurips.cc/Conferences/2026
+  year: 2027
+  link: https://neurips.cc/Conferences/2027
   deadline:
-    - "2026-05-06 23:59"
-  comment: "Abstract deadline May 4, 2026. Multi-city: Sydney (Dec 6-12), Atlanta (Dec 8-13), Paris (Dec 9-13)."
-  date: "December 6-13"
-  place: Sydney / Atlanta / Paris
+    - "2027-05-06 23:59"
+  comment: "Dates TBA. Abstract deadline typically 2 days before paper deadline."
+  date: "December 2027 (TBA)"
+  place: TBA
   tags: [AI]
 
 - name: ICLR
   description: International Conference on Learning Representations
-  year: 2026
-  link: https://iclr.cc/Conferences/2026
+  year: 2027
+  link: https://iclr.cc/Conferences/2027
   deadline:
-    - "2025-09-24 23:59"
-  comment: Abstract deadline Sep 19, 2025.
-  date: "April 23-27"
-  place: Rio de Janeiro, Brazil
+    - "2026-09-24 23:59"
+  comment: Abstract deadline typically 5 days before. Dates TBA.
+  date: "April 2027 (TBA)"
+  place: TBA
   tags: [AI]
 
 - name: ICML
   description: International Conference on Machine Learning
-  year: 2026
-  link: https://icml.cc/Conferences/2026
+  year: 2027
+  link: https://icml.cc/Conferences/2027
   deadline:
-    - "2026-01-28 23:59"
-  comment: Abstract deadline Jan 23, 2026.
-  date: "July 6-11"
-  place: Seoul, South Korea
+    - "2027-01-28 23:59"
+  comment: Abstract deadline typically 5 days before. Dates TBA.
+  date: "July 2027 (TBA)"
+  place: TBA
   tags: [AI]
 
 - name: CVPR
   description: IEEE/CVF Conference on Computer Vision and Pattern Recognition
-  year: 2026
-  link: https://cvpr.thecvf.com/Conferences/2026
+  year: 2027
+  link: https://cvpr.thecvf.com/Conferences/2027
   deadline:
-    - "2025-11-13 23:59"
-  comment: Abstract deadline Nov 7, 2025.
-  date: "June 3-7"
-  place: Denver, CO, USA
+    - "2026-11-13 23:59"
+  comment: Abstract deadline typically 6 days before. Dates TBA.
+  date: "June 2027 (TBA)"
+  place: TBA
   tags: [AI]
 
 - name: ACL
   description: Annual Meeting of the Association for Computational Linguistics
-  year: 2026
-  link: https://2026.aclweb.org/
+  year: 2027
+  link: https://2027.aclweb.org/
   deadline:
-    - "2026-03-14 23:59"
-  comment: Submission to ARR by Jan 5, 2026. Commitment deadline Mar 14, 2026.
-  date: "July 2-7"
-  place: San Diego, CA, USA
+    - "2027-03-14 23:59"
+  comment: Submission to ARR TBA. Commitment deadline estimated. Dates TBA.
+  date: "August 17-22"
+  place: Japan
   tags: [AI]
 
 - name: AAAI
   description: AAAI Conference on Artificial Intelligence
-  year: 2026
-  link: https://aaai.org/conference/aaai/aaai-26/
+  year: 2027
+  link: https://aaai.org/conference/aaai/aaai-27/
   deadline:
-    - "2025-08-01 23:59"
-  comment: Abstract deadline Jul 25, 2025.
-  date: "January 20-27"
-  place: Singapore
+    - "2026-08-01 23:59"
+  comment: Abstract deadline typically 6 days before. Dates TBA.
+  date: "January 2027 (TBA)"
+  place: TBA
   tags: [AI]
